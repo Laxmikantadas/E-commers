@@ -21,7 +21,7 @@ app.use(cookieParser())
 app.use("/",authRouter)
 app.use("/admin",adminRouter)
 app.use("/users",userRouter)
-app.use("cart",cartRouter)
+app.use("/cart",cartRouter)
 
 
 

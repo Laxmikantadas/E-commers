@@ -40,16 +40,10 @@ const userShema = new mongoose.Schema(
     },
     role: {
       type: String,
+      enum:["user","admin"],
       default:"user",
     },
-    isBlocked: {
-      type: Boolean,
-      default: false,
-    },
-    cart: {
-      type: Array,
-      default: [],
-    },
+    cart: [{type:mongoose.Schema.Types.ObjectId,ref:"cart"}],
     address: {
       type: String,
     },

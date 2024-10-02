@@ -1,0 +1,11 @@
+const express=require("express")
+const router=express.Router()
+const {signUp,loginUser,adminLogin,userProfile,updateUser,deleteUser}=require("../controllers/authController.js")
+const auth=require("../middleware/auth.js")
+router.post("/signup",signUp)
+router.post("/userlogin",loginUser)
+router.post("/adminlogin",adminLogin)
+router.get("/profile",auth,userProfile)
+router.put("/upadteuser",auth,updateUser)
+router.delete("/deleteuser",auth,deleteUser)
+module.exports=router
